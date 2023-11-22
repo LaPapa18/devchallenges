@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    margin-top: 5px;
+}
+
+
+/* Contenedor */
+
+.contenedor {
+    background-color: rgb(245, 245, 245);
+}
+
+
+/* Header -Menu */
+
+.header {
+    padding-top: 10px;
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.logo span {
+    color: orange;
+}
+
+.hamburguesa {
+    width: 30px;
+}
+
+@media (min-width:768px) {
+    .hamburguesa {
+        display: none;
+    }
+}
+
+.hamburguesa:hover {
+    cursor: pointer;
+}
+
+
+/* Navegacion */
+
+.menu {
+    display: none;
+}
+
+@media (min-width:768px) {
+    .menu {
+        display: flex;
+    }
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+}
+
+@media (min-width:768px) {
+    .navegacion {
+        gap: 30px;
+    }
+}
+
+@media (min-width:992px) {
+    .navegacion {
+        gap: 50px;
+    }
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: rgb(97, 97, 97);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.navegacion a:hover {
+    color: black;
+}
+
+.navegacion li:first-child a {
+    font-weight: 700;
+}
+
+.navegacion li:first-child a:first-child {
+    color: #111729;
+}
+
+
+/* Información Banner */
+
+.presentacion {
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width:768px) {
+    .presentacion {
+        flex-direction: row;
+    }
+}
+
+
+/* Información */
+
+.informacion--boton button {
+    padding: 10px;
+    background-color: #2A4DD0;
+    border: 1px solid #2A4DD0;
+    color: white;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+.informacion--boton a {
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.informacion--boton button:hover {
+    background-color: white;
+    color: #2A4DD0;
+    cursor: pointer;
+}
+
+.informacion h1 {
+    font-size: 80px;
+    opacity: .5;
+}
+
+.informacion h5 {
+    font-size: 18px;
+}
+
+
+/* Información imagen */
+
+.presentacion--imagen {
+    max-width: 300px;
+    filter: drop-shadow(0 1mm 3mm rgba(255, 166, 0, 0.468));
+}
+
+@media (min-width:456px) {
+    .presentacion--imagen {
+        max-width: 500px;
+    }
+}
+
+@media (min-width:1024px) {
+    .presentacion--imagen {
+        max-width: 800px;
+    }
+}
+
+
+/* Seccion platos */
+
+.comida {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.platos {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 85px;
+}
+
+@media (min-width:768px) {
+    .platos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width:992px) {
+    .platos {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.comida--titulo {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 85px;
+}
+
+@media (min-width:768px) {
+    .comida--titulo {
+        text-align: start;
+    }
+}
+
+.plato--info button:hover {
+    cursor: pointer;
+}
+
+.toggle {
+    font-size: 1rem;
+    /* 👈 change this to scale */
+    border: .125em solid currentColor;
+    border-radius: 2em;
+    cursor: pointer;
+    display: block;
+    height: 2em;
+    position: relative;
+    width: 3.75em;
+}
+
+.toggle span {
+    background-color: currentColor;
+    border-radius: 2em;
+    display: block;
+    height: 1.5em;
+    left: .25em;
+    overflow: hidden;
+    position: absolute;
+    top: .25em;
+    text-indent: -9999px;
+    transition: left .25s;
+    width: 1.5em;
+    z-index: 2;
+}
+
+.toggle::before,
+.toggle::after {
+    content: '';
+    display: block;
+    border-radius: 1em;
+    position: absolute;
+    z-index: 1;
+}
+
+.toggle::after {
+    box-shadow: .25em .25em #5901d8;
+    height: 1.125em;
+    right: .9em;
+    top: .125em;
+    width: 1.125em;
+}
+
+.toggle::before {
+    background-color: #ffc409;
+    height: .625em;
+    outline: .25em dotted #ffc409;
+    outline-offset: .125em;
+    left: .7em;
+    top: .7em;
+    width: .625em;
+}
+
+input:checked~.toggle span {
+    left: 2em;
+}
+
+input {
+    display: none;
+}
